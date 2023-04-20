@@ -17,7 +17,7 @@ pagination:
         {%- endfor %}
     </ul>
 
-    <div class="flex-group">
+    <div class="flex-group page-nav">
         {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" class="btn btn--neutral"><i class="fa fa-caret-left" aria-hidden="true"></i>&nbsp;&nbsp;Vorherige Artikel</a>{% endif %}
         {% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="btn btn--neutral">Nächste Artikel&nbsp;&nbsp;<i class="fa fa-caret-right" aria-hidden="true"></i></a>{% endif %}
     </div>

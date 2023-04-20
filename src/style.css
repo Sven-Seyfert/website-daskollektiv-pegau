@@ -206,6 +206,10 @@ a:hover,
   gap: var(--gap, 1em);
 }
 
+.page-nav {
+  margin-top: 3rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -368,7 +372,7 @@ a:hover,
   }
 
   .articles__list {
-    margin: 3rem 0 6rem 0 !important;
+    margin: 3rem 0 0 0 !important;
   }
 
   .site-footer-grid {
@@ -450,7 +454,7 @@ a:hover,
 
 .articles__list {
   --flow-spacer: 5.5rem;
-  margin: 6rem 0;
+  margin: 5.5rem 0 3rem 0;
 }
 
 /* //////////////////////
@@ -598,7 +602,7 @@ a:hover,
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  margin: 3rem 0;
+  margin: 3rem 0 0 0;
 }
 
 .offers div {
