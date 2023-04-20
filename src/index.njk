@@ -1,0 +1,124 @@
+---
+layout: 'base.njk'
+tag: home
+---
+
+<section class="hero">
+    <div class="container flow">
+
+        <div class="hero__content flow">
+            <h1 class="section-title">Der Verein das Kollektiv e.V.</h1>
+
+            <p>Zweck des Vereins ist die Förderung von Kunst, Kultur und bürgerschaftlichen Engagements zugunsten gemeinnütziger Zwecke in Pegau.</p>
+            <p>Dabei sollen "neue" und "alteingesessene" Pegauer:innen zusammenkommen und sich kennenlernen.</p>
+            <p>Wie wir das schaffen, wer wir sind und mehr noch zum Verein, erfährst du auf unserer <a href="/verein/">Über uns</a> Seite.</p>
+
+            <div class="flex-group">
+                <a href="#featured-articles" class="btn btn--primary">Aktuelles</a>
+                <a href="./events" class="btn btn--neutral">Veranstaltungen</a>
+            </div>
+        </div>
+
+        <div>
+            <img src="https://picsum.photos/510" alt="" class="hero__image">
+        </div>
+
+    </div>
+</section>
+
+<section id="facts" class="facts">
+    <div class="container flow">
+
+        <h2 class="section-title text-center ">Fakten</h2>
+        <p class="text-center">Quam ratione earum architecto consequatur ipsum et sunt et numquam.</p>
+
+        <script>
+            function inVisible(element) {
+                var WindowTop = $(window).scrollTop();
+                var WindowBottom = WindowTop + $(window).height();
+                var ElementTop = element.offset().top;
+                var ElementBottom = ElementTop + element.height();
+
+                if ((ElementBottom <= WindowBottom) && ElementTop >= WindowTop)
+                    animate(element);
+            }
+
+            function animate(element) {
+                if (!element.hasClass('ms-animated')) {
+                    var maxval = element.data('max');
+                    var html = element.html();
+
+                    element.addClass("ms-animated");
+
+                    $({ countNum: element.html() }).animate({ countNum: maxval }, {
+                        duration: 2000,
+                        easing: 'linear',
+                        step: function () {
+                            element.html(Math.floor(this.countNum) + html);
+                        },
+                        complete: function () {
+                            element.html(this.countNum + html);
+                        }
+                    });
+                }
+            }
+
+            $(function () {
+                $(window).scroll(function () {
+                    $("p[data-max]").each(function () {
+                        inVisible($(this));
+                    });
+                })
+            });
+        </script>
+
+        <br/>
+        <div class="facts-grid">
+            <div class="fact1">
+                <p><i class="fa fa-id-card-o" aria-hidden="true"></i></p>
+                <p data-max="11"></p>
+                <p>Mitglieder</p>
+            </div>
+            <div class="fact2">
+                <p><i class="fa fa-user-circle" aria-hidden="true"></i></p>
+                <p data-max="17"></p>
+                <p>Fördermitglieder</p>
+            </div>
+            <div class="fact3">
+                <p><i class="fa fa-th" aria-hidden="true"></i></p>
+                <p data-max="9"></p>
+                <p>Veranstaltungen</p>
+            </div>
+            <div class="fact4">
+                <p><i class="fa fa-wpexplorer" aria-hidden="true"></i></p>
+                <p data-max="11"></p>
+                <p>Angebote</p>
+            </div>
+            <div class="fact5">
+                <p><i class="fa fa-calendar" aria-hidden="true"></i></p>
+                <p data-max="2"></p>
+                <p>Jahre das Kollektiv</p>
+            </div>
+            <div class="fact6">
+                <p><i class="fa fa-handshake-o" aria-hidden="true"></i></p>
+                <p data-max="3"></p>
+                <p>Kooperationen</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="featured-articles" class="featured-articles">
+    <div class="container flow">
+
+        <h2 class="section-title text-center ">Aktuelles</h2>
+        <p class="text-center">Hier könnten bspw. die kommenden drei Veranstaltungen kurz vorgestellt werden.</p>
+
+        <ul role="list" class="articles__list flow">
+            {%- for post in collections.featured -%}
+            {% include 'article-snippet.njk' %}
+            {%- endfor %}
+        </ul>
+
+    </div>
+</section>

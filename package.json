@@ -1,0 +1,24 @@
+{
+  "name": "website-daskollektiv-pegau",
+  "version": "1.0.0",
+  "description": "TODO.",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sven-seyfert/website-daskollektiv-pegau.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sven-seyfert/website-daskollektiv-pegau/issues"
+  },
+  "homepage": "https://github.com/sven-seyfert/website-daskollektiv-pegau#readme",
+  "keywords": [],
+  "author": "Sven Seyfert",
+  "license": "TODO",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

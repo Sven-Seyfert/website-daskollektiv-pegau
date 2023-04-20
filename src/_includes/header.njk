@@ -1,0 +1,51 @@
+<header class="page-header">
+    <div class="container">
+        <div class="page-header__content">
+
+            <div>
+                <a href="/">
+                    <img class="logo dark" src="/assets/light/logo-horizontal-640x119.png" alt="logo">
+                </a>
+            </div>
+
+            <nav class="nav-large">
+                <ul role="list" class="nav-list flex-group">
+                    <li><a class="{{ 'active' if tag == 'home' }}" href="/">Aktuelles</a></li>
+                    <li><a class="{{ 'active' if '/events' in page.url }}" href="/events/">Veranstaltungen</a></li>
+                    <li><a class="{{ 'active' if '/angebote' in page.url }}" href="/angebote/">Angebote</a></li>
+                    <li><a class="{{ 'active' if '/verein' in page.url }}" href="/verein/">Über uns</a></li>
+                    <li><a href="/TODO"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+
+            <div class="menu" onclick="
+                document.getElementsByClassName('menu')[0].style.display = 'none';
+                document.getElementsByClassName('close')[0].style.display = 'block';
+                document.getElementsByClassName('nav-small')[0].style.display = 'block';">
+                ☰
+            </div>
+
+            <div class="close" onclick="
+                document.getElementsByClassName('menu')[0].style.display = 'block';
+                document.getElementsByClassName('close')[0].style.display = 'none';
+                document.getElementsByClassName('nav-small')[0].style.display = 'none';">
+                ✕
+            </div>
+
+            <nav class="nav-small">
+                <a><p></p></a>
+                <a class="{{ 'active-small' if tag == 'home' }}" href="/"><p>Aktuelles</p></a>
+                <a class="{{ 'active-small' if '/events' in page.url }}" href="/events/"><p>Veranstaltungen</p></a>
+                <a class="{{ 'active-small' if '/angebote' in page.url }}" href="/angebote/"><p>Angebote</p></a>
+                <a class="{{ 'active-small' if '/verein' in page.url }}" href="/verein/"><p>Über uns</p></a>
+                <a><p></p></a>
+                <a class="{{ 'active-small' if '/datenschutz' in page.url }}" href="/datenschutz/"><p>Datenschutzerklärung</p></a>
+                <a class="{{ 'active-small' if '/impressum' in page.url }}" href="/impressum/"><p>Impressum</p></a>
+                <a><p></p></a>
+                <a href="/TODO"><p><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</p></a>
+                <a><p></p></a>
+            </nav>
+
+        </div>
+    </div>
+</header>

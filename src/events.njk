@@ -1,0 +1,25 @@
+---
+layout: 'base.njk'
+pagination:
+    data: collections.post
+    size: 3
+    alias: posts
+    reverse: true
+---
+
+<div class="section container">
+
+    <h1 class="section-title">Alle Veranstaltungen</h1>
+
+    <ul role="list" class="articles__list flow">
+        {%- for post in posts -%}
+        {% include 'article-snippet.njk' %}
+        {%- endfor %}
+    </ul>
+
+    <div class="flex-group">
+        {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" class="btn btn--neutral">⯇ Vorherige Artikel</a>{% endif %}
+        {% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="btn btn--neutral">Nächste Artikel ⯈</a>{% endif %}
+    </div>
+
+</div>
