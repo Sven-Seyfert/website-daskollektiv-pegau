@@ -628,3 +628,39 @@ a:hover,
   opacity: 0.8;
   padding: 5px 10px;
 }
+
+.members {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 12rem));
+  margin: 3rem 0 0 0;
+}
+
+.members div {
+  padding: 0.25em 0.25em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .members div img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+}
+
+.members div img {
+  aspect-ratio: 1 / 1;
+  object-fit: scale-down;
+  width: 100%;
+  opacity: .7;
+
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .4s ease-in-out;
+  filter: grayscale(100%);
+  transition: .4s ease-in-out;
+}
+
+.members div img:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  opacity: .8;
+}
